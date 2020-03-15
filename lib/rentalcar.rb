@@ -25,6 +25,8 @@ module RentalCar
         @app.create_rental(input.split[1])
       when 'create_car'
         @app.create_car(input.split[1], input.split[2])
+      when 'rent'
+        @app.rent(input.split[1], input.split[2], input.split[3])
       when 'status'
         @app.status(input.split[1])
       when 'search_car_by_reg_number'

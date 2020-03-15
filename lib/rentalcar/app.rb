@@ -22,6 +22,15 @@ module RentalCar
       puts '  ' + Rainbow("Car can't save, registration number already exist").red.bright
     end
 
+    def rent(reg_number, renter, date)
+      car = Parser.new.parse(reg_number, nil, renter, date)
+      car.mark_rent
+      @@rental.update('cars', reg_number, car.to_hash)
+      puts '  ' + Rainbow("Reserved #{reg_number} to #{renter} on #{date}").green.bright
+    rescue PG::Error
+      $stdout << 'Already reserved'
+    end
+
     def status(date)
       cars = @@rental.read('cars')
       unless cars.nil?
