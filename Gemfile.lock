@@ -45,6 +45,7 @@ PLATFORMS
 
 DEPENDENCIES
   pg (~> 1.2)
+  rainbow (~> 3.0)
   rake (~> 12.0)
   rentalcar!
   rspec (~> 3.0)
