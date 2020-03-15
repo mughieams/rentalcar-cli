@@ -7,6 +7,7 @@ require 'rentalcar/version'
 require 'rentalcar/setting'
 require 'rentalcar/database'
 require 'rentalcar/car'
+require 'rentalcar/parser'
 
 module RentalCar
   class Error < StandardError; end
