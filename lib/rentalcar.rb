@@ -23,6 +23,8 @@ module RentalCar
       case input.split[0]
       when 'create_rental'
         @app.create_rental(input.split[1])
+      when 'create_car'
+        @app.create_car(input.split[1], input.split[2])
       else
         help
       end
