@@ -9,13 +9,23 @@ require 'rentalcar/setting'
 require 'rentalcar/database'
 require 'rentalcar/car'
 require 'rentalcar/parser'
+require 'rentalcar/app'
 
 module RentalCar
   class Error < StandardError; end
 
   class Binary
     def initialize
-      help
+      @app = RentalCar::App.new
+    end
+
+    def route_input(input)
+      case input.split[0]
+      when 'create_rental'
+        @app.create_rental(input.split[1])
+      else
+        help
+      end
     end
 
     def help

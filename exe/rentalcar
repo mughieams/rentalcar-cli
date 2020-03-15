@@ -3,4 +3,4 @@
 
 require 'rentalcar'
 
-RentalCar::Binary.new
+RentalCar::Binary.new.route_input(ARGV.join(' '))
