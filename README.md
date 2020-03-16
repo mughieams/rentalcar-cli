@@ -65,3 +65,7 @@ Open this project directory on terminal and execute this command below:
 ```console
 $ bundle exec exe/rentalcar
 ```
+
+## Acknowledgments
+
+* Sweet Escape who has given me the opportunity to do this coding test
