@@ -28,7 +28,7 @@ module RentalCar
       @@rental.update('cars', reg_number, car.to_hash)
       puts '  ' + Rainbow("Reserved #{reg_number} to #{renter} on #{date}").green.bright
     rescue PG::Error
-      $stdout << 'Already reserved'
+        puts '  ' + Rainbow("Already reserved").red.bright
     end
 
     def status(date)
