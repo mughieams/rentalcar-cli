@@ -14,3 +14,54 @@ These instructions will get you a copy of the project up and running on your loc
 ```console
 $ sudo gem install bundler
 ```
+
+### How to use
+
+These commands below will help you to use this project properly.
+
+For the first, you need to clone this repository then run:
+
+```console
+$ bundle install --path vendor/bundle
+```
+
+Next, you must make a new `_config.yml` file inside `config` directory using your own `postgres` configuration. For the format, you can write using this format below:
+
+```yml
+db_host: ''
+db_user: ''
+db_pass: ''
+db_name: ''
+```
+
+### When working
+
+#### Running the tests
+
+Open this project directory on terminal and execute this command below:
+
+```console
+$ bundle rspec spec
+```
+
+#### Verifying code style
+
+Open this project directory on terminal and execute this command below:
+
+```console
+$ bundle exec rubocop 
+```
+
+You can reformat the code by executing:
+
+```console
+$ bundle exec rubocop -a
+```
+
+### When running this project
+
+Open this project directory on terminal and execute this command below:
+
+```console
+$ bundle exec exe/rentalcar
+```
