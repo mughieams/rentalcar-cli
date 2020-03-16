@@ -22,7 +22,7 @@ module RentalCar
     def route_input(input)
       case input.split[0]
       when 'create_rental'
-        @app.create_rental(input.split[1])
+        @app.create_rental
       when 'create_car'
         @app.create_car(input.split[1], input.split[2])
       when 'rent'
@@ -41,7 +41,7 @@ module RentalCar
     def help
       puts "\n"
       puts "  $ rentalcar #{Rainbow('[command]').blue.bright} - a simple command line rental car simulation program\n\n"
-      puts "               #{Rainbow('create_rental').blue.bright} #{Rainbow('[name]').green.bright}                      => Create a new rental car"
+      puts "               #{Rainbow('create_rental').blue.bright}                             => Create a new rental car"
       puts "                  #{Rainbow('create_car').blue.bright} #{Rainbow('[reg-number] [color]').green.bright}        => Adds a new car to rental"
       puts "                        #{Rainbow('rent').blue.bright} #{Rainbow('[reg-number] [name] [date]').green.bright}  => Rents a car from rental"
       puts "                      #{Rainbow('status').blue.bright} #{Rainbow('[date]').green.bright}                      => Show list of available cars on that date"

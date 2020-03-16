@@ -4,17 +4,17 @@ module RentalCar
   class App
     @@rental = Database.new
 
-    def create_rental(name)
-      @@rental.drop_table(name)
-      @@rental.create_table(name)
-      puts "  #{Rainbow('Rental').green.bright} #{Rainbow(name).blue.bright} #{Rainbow('created').green.bright}"
+    def create_rental
+      @@rental.drop_table('cars')
+      @@rental.create_table('cars')
+      puts "  #{Rainbow('Rental created').green.bright}"
     end
 
     def create_car(reg_number, color)
       car = Parser.new.parse(reg_number, color)
       if car.valid?
         @@rental.insert('cars', car.to_hash)
-        puts "  #{Rainbow('Car').green.bright} #{Rainbow("#{reg_number} #{color}").blue.bright}  #{Rainbow('saved').blue.bright}"
+        puts "  #{Rainbow('Car').green.bright} #{Rainbow("#{reg_number} #{color}").blue.bright}  #{Rainbow('saved').green.bright}"
       else
         puts '  ' + Rainbow('Car not saved, it needs a registration number and color..').red.bright
       end
@@ -28,7 +28,7 @@ module RentalCar
       @@rental.update('cars', reg_number, car.to_hash)
       puts '  ' + Rainbow("Reserved #{reg_number} to #{renter} on #{date}").green.bright
     rescue PG::Error
-        puts '  ' + Rainbow("Already reserved").red.bright
+      puts '  ' + Rainbow("Already reserved").red.bright
     end
 
     def status(date)
