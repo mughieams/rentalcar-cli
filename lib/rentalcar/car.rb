@@ -25,7 +25,7 @@ module RentalCar
       @color = hash.fetch(:color, nil) || hash.fetch('color')
       @status = hash.fetch(:status, nil) || hash.fetch('status')
       @renter = hash.fetch(:renter, nil) || hash.fetch('renter')
-      @renter = hash.fetch(:date, nil) || hash.fetch('date')
+      @date = hash.fetch(:date, nil) || hash.fetch('date')
     end
 
     def to_hash
