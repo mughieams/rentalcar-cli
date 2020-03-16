@@ -16,7 +16,7 @@ module RentalCar
     end
 
     def date(value)
-      value.nil? ? nil : value.to_date
+      value.nil? ? nil : Date.parse(value)
     end
   end
   end
