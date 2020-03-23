@@ -68,4 +68,4 @@ $ bundle exec exe/rentalcar
 
 ## Acknowledgments
 
-* Sweet Escape who has given me the opportunity to do this coding test
+Thanks to [**@sweetescape**](https://www.sweetescape.com/en) for giving me the opportunity to do this coding test.
